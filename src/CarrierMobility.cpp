@@ -25,14 +25,23 @@ JacoboniMobility::JacoboniMobility( char carrier_type, double T)
   _T = T;
   if (carrier_type == 'e') // Electrons
   {
-    _mu0 = 1440.e8*std::pow(_T/300., -2.260);
-    _vsat = 1.054e11  * std::pow(_T/300., -0.602);
-    _beta = 0.992 * std::pow(_T/300., 0.572); // <100> orientation
+    //_mu0 = 1440.e8*std::pow(_T/300., -2.260);
+    //_vsat = 1.054e11  * std::pow(_T/300., -0.602);
+    //_beta = 0.992 * std::pow(_T/300., 0.572); // <100> orientation
+    _mu0 = 4500.e8*std::pow(_T/300., -2.260);
+    _vsat = 2.1e11  * std::pow(_T/300., -0.602);
+    _beta = 0.992 * std::pow(_T/300., 0.572); // <100> orientation    
+
+
   }
   else if (carrier_type == 'h') // Holes
   {
-    _mu0 = 474.e8 * std::pow(_T/300., -2.619);
-    _vsat = 0.940e11  * std::pow(_T/300., -0.226);
+    //_mu0 = 474.e8 * std::pow(_T/300., -2.619);
+    //_vsat = 0.940e11  * std::pow(_T/300., -0.226);
+    //_beta = 1.181 * std::pow(_T/300., 0.633 ); // <100> orientation
+
+    _mu0 = 3800.e8 * std::pow(_T/300., -2.619);
+    _vsat = 1.025e11  * std::pow(_T/300., -0.226);
     _beta = 1.181 * std::pow(_T/300., 0.633 ); // <100> orientation
   }
 }
